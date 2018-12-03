@@ -11,9 +11,13 @@
 |
 */
 
-Route::resource('/', 'MainPage')->middleware('auth');
-Route::resource('/posts', 'Posts')->middleware('auth');
-Route::resource('/comments', 'Comments');
+Route::resource('/', 'MainPageController');
+Route::resource('/posts', 'PostssController');
+Route::resource('/comments', 'CommentsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
