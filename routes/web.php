@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/', 'MainPage');
+Route::resource('/posts', 'Posts');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
