@@ -12,7 +12,7 @@
 */
 
 Route::resource('/', 'MainPageController');
-Route::resource('/posts', 'PostssController');
+Route::resource('/posts', 'PostsController');
 Route::resource('/comments', 'CommentsController');
 Auth::routes();
 
