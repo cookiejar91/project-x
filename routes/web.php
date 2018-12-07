@@ -10,14 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::resource('/', 'MainPageController');
-Route::resource('/posts', 'PostsController');
-Route::resource('/comments', 'CommentsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Auth::routes();
+Route::get('/tasks', 'TaskController@index');
+Route::post('/tasks', 'TaskController@store');
+Route::delete('/task/{task}', 'TaskController@destroy');
 
-Route::get('/home', 'HomeController@index')->name('home');
